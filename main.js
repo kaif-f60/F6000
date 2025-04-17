@@ -3,4 +3,4 @@ const b = 30;
 const c = a*b;
 
 console.log(c)
-console.log(c+"hello")
+console.log(c+" "+"hello")
