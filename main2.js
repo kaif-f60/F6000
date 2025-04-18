@@ -5,7 +5,7 @@ let rw = "hello world";
 console.log(re === rw); // true
 =======
 let obj1 = {
-    name;"john",
+    name:"john",
     age: 30,
     city: "New York",
     }
