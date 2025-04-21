@@ -25,8 +25,15 @@ app.get('/about',(req, res)=>{
  })
 
 
+//  app.get('/search',(req, res)=>{
+//     // res.send(req.params.userid);
+//     // res.send(req.params.bookid);
+//     res.send(req.query);
+//  })
+
+ 
  app.get('/search',(req, res)=>{
-    // res.send(req.params.userid);
-    // res.send(req.params.bookid);
-    res.send(req.query);
+    const name =  req.query.name
+    const age =  req.query.age
+    res.send(`search result for name : Name : ${name}, Age:${age} `);
  })
