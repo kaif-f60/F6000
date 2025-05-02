@@ -16,6 +16,8 @@ app.get('/',(req, res)=>{
 
 
 
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
 
 app.get('/about',(req, res)=>{
     res.send("<h1>Welcome to About page");
@@ -76,4 +78,61 @@ app.get('/abc4',(req,res)=>{
 })
     
     
-    
+   // this methods for download file 
+app.get('/download',(req,res )=>{
+   res.download('./files/Rondomat.pdf','news.pdf')
+})
+
+//this method is used for to open image,pdf ,or file in new tab
+
+app.get('/downloads',(req,res )=>{
+   res.sendFile(__dirname+ '/files/Rondomat.pdf')
+})
+
+// learning end method and write method
+app.get('/end',(req,res )=>{
+   res.write('This is Testing')
+   res.end()
+})
+
+
+// app.post('/about',(req,res)=>{
+// res.send(req.body)
+// })
+
+
+// app.get('/ghost',(req,res)=>{
+// res.send(req.hostname)
+// })
+
+// app.get('/ip',(req,res)=>{
+// res.send(req.ip)
+// })
+
+
+// app.get('/ips',(req,res)=>{
+// res.send(req.ips)
+// })
+
+// app.get('/method',(req,res)=>{
+//    res.send(req.method)
+//    })
+
+// app.get('/original',(req,res)=>{
+//    res.send(req.originalUrl)
+//    })
+
+// app.get('/path',(req,res)=>{
+//       res.send(req.path)
+//       })
+// app.get('/proto',(req,res)=>{
+//       res.send(req.protocol)
+//       })
+
+
+// app.get('/secure',(req,res)=>{
+//       res.send(req.secure)
+//       })
+app.get('/route',(req,res)=>{
+      res.send(req.route)
+      })
