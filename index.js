@@ -133,6 +133,18 @@ app.get('/end',(req,res )=>{
 // app.get('/secure',(req,res)=>{
 //       res.send(req.secure)
 //       })
-app.get('/route',(req,res)=>{
+
+// app.get('/route',(req,res)=>{
+//       res.send(req.route)
+//       })
+
+      
+
+// app.get('/route/:userid',(req,res)=>{
+//       res.send(req.route)
+//       })
+
+app.get('/route/:userid',(req,res)=>{
       res.send(req.route)
       })
+
