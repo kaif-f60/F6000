@@ -19,9 +19,9 @@ app.get('/',(req, res)=>{
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
-app.get('/about',(req, res)=>{
-    res.send("<h1>Welcome to About page");
- })
+// app.get('/about',(req, res)=>{
+//     res.send("<h1>Welcome to About page");
+//  })
  app.get('/Gallery',(req, res)=>{
     res.send("<h1>Welcome to Gallery page");
  })
@@ -144,7 +144,37 @@ app.get('/end',(req,res )=>{
 //       res.send(req.route)
 //       })
 
-app.get('/route/:userid',(req,res)=>{
-      res.send(req.route)
-      })
 
+// properties are end will se some methods
+
+app.get('/about',(req,res)=>{
+if(req.accepts('json')) 
+{res.send({message:'Hello JSON'})} 
+else if 
+(req.accepts('html'))
+   {
+   res.send("<h1>Hello HTML</h1>")
+   }
+else if (req.accepts('xml')) 
+   {
+ res.send("<message>Hello JSON</message>")
+   } 
+   else{
+   res.send("Content /type not supported")
+   }
+   })
+
+
+   // app.get('/items', (req, res) => {
+   
+   //    if  (req.accepts('text/html')) {
+   //      res.send('<h1>Items</h1>');
+   //    } 
+      
+   //    else if (req.accepts('application/json')) {
+   //       res.send({ items: [] });
+   //     } 
+   //    else {
+   //      res.status(406).send('Not Acceptable');
+   //    }
+   //  });
