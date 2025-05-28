@@ -1,7 +1,6 @@
 express = require('express')
 const app  = express()
 
-
 app.listen(3000,()=>{
    console.log('Succes Connect');
 })
@@ -13,8 +12,6 @@ app.get('/',(req, res)=>{
     childs
    );
 })
-
-
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
@@ -55,7 +52,7 @@ app.get('/abc',(req,res)=>{
     res.redirect("https:pipex.ai")
      })
 // redirect with status code
-     app.get('/abc1',(req,res)=>{
+app.get('/abc1',(req,res)=>{
         res.redirect(301, "https:pipex.ai")
          })
     
@@ -143,8 +140,6 @@ app.get('/end',(req,res )=>{
 // app.get('/route/:userid',(req,res)=>{
 //       res.send(req.route)
 //       })
-
-
 // properties are end will se some methods
 
 app.get('/about',(req,res)=>{
@@ -157,7 +152,7 @@ else if
    }
 else if (req.accepts('xml')) 
    {
- res.send("<message>Hello JSON</message>")
+res.send("<message>Hello JSON</message>")
    } 
    else{
    res.send("Content /type not supported")
