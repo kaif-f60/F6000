@@ -7,7 +7,7 @@ app.listen(3000,()=>{
 
 app.get('/',(req, res)=>{
 
-    const childs =[{name:"kailash", age:21},{name:"kailash1", age:25}]
+    const childs =[{name:"kailash", age:21},{name:"Kher", age:25}]
    res.json(
     childs
    );
